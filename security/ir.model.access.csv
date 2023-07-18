@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access.horeso.employees,access_horeso_employees,horeso-attendance.model_horeso_employees,base.group_user,1,1,1,1

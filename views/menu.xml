@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_horeso_root"
+        name="HoReSo Attendance"
+        web_icon="horeso-attendance,static/description/icon.png"
+        sequence="0"/>
+
+    <menuitem id="menu_horeso_attendance_master"
+        name="Attendance Details"
+        parent="menu_horeso_root"
+        sequence="10"/>
+
+</odoo>
