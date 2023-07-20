@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_horeso_attendance_check_in" model="ir.ui.view">
+        <field name="name">horeso.attendance.checkin.form</field>
+        <field name="model">horeso.attendance</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="employee_id"/>
+                        <field name="check_in_time" readonly="1"/>
+                    </group>
+                </sheet>
+                <!-- <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div> -->
+            </form>
+        </field>
+    </record>
+
+    <record id="action_horeso_attendance_check_in" model="ir.actions.act_window">
+        <field name="name">Check In Form</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">horeso.attendance</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_horeso_attendance_check_in"/>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Buat data Checkin baru!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_horeso_attendance_check_in"
+        name="Check In"
+        action="action_horeso_attendance_check_in"
+        parent="menu_horeso_attendance_master"
+        sequence="0"/>
+
+</odoo>

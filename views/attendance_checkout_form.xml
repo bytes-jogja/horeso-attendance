@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_horeso_attendance_check_out" model="ir.ui.view">
+        <field name="name">horeso.attendance.checkout.form</field>
+        <field name="model">horeso.attendance</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="employee_id"/>
+                        <field name="check_out_time" readonly="1"/>
+                    </group>
+                    <notebook>
+                        <page string="Houkoku/Report" name="houkoku">
+                            <field name="ho_field" placeholder="Enter your report"/>
+                        </page>
+                        <page string="Renraku/Communication" name="renraku">
+                            <field name="ren_field" placeholder="Enter your communication"/>
+                        </page>
+                        <page string="Soudan/Discussion" name="soudan">
+                            <field name="so_field" placeholder="Enter your discussion"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <!-- <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div> -->
+            </form>
+        </field>
+    </record>
+
+    <record id="action_horeso_attendance_check_out" model="ir.actions.act_window">
+        <field name="name">Check Out Form</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">horeso.attendance</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_horeso_attendance_check_out"/>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Buat data Checkout baru!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_horeso_attendance_check_out"
+        name="Check Out"
+        action="action_horeso_attendance_check_out"
+        parent="menu_horeso_attendance_master"
+        sequence="10"/>
+
+</odoo>
