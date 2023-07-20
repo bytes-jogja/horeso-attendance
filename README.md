@@ -1,3 +1,5 @@
+<img src="static/description/icon.png" width="100"/>
+
 ## Horeso Attendance Addon
 
 ![](https://img.shields.io/badge/Odoo%20Version-15-6B4B62)
